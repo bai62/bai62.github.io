@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【每日算法Day13】盛水最多的容器, Sword的博客">
+    <meta name="keywords" content="【fi】计算机组成原理之计算机的基本硬件组成, Sword的博客">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【每日算法Day13】盛水最多的容器 | Sword的博客</title>
+    <title>【fi】计算机组成原理之计算机的基本硬件组成 | Sword的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2021/10/06/KwhLO6SlbUtxDaX.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【每日算法Day13】盛水最多的容器</h1>
+                    <h1 class="description center-align post-title">【fi】计算机组成原理之计算机的基本硬件组成</h1>
                 </div>
             </div>
         </div>
@@ -429,29 +429,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Leetcode/">
-                                <span class="chip bg-color">Leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">每日算法</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -484,31 +467,59 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
-<p>说明：你不能倾斜容器。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><p><img src="https://i.loli.net/2021/10/27/sH9uMgAGBI7Jy8v.jpg"></p>
-<p>输入：[1,8,6,2,5,4,8,3,7]<br>输出：49<br>解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</p>
-<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><p>输入：height = [1,1]<br>输出：1</p>
-<h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><p>输入：height = [4,3,2,1,4]<br>输出：16</p>
-<h4 id="示例-4："><a href="#示例-4：" class="headerlink" title="示例 4："></a>示例 4：</h4><p>输入：height = [1,2,1]<br>输出：2</p>
-<p>提示：</p>
-<p>n == height.length<br>2 &lt;= n &lt;= 105<br>0 &lt;= height[i] &lt;= 104</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>容器的容积由两板中短板决定。初始时两个指针在数组两侧，移动短板时容积变大、变小或不变，移动长板时容积变小或不变。所以不能移动长板</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>height<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> r <span class="token operator">=</span> height<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> r<span class="token punctuation">;</span>
-
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            height<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;</span> height<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">?</span> l<span class="token operator">++</span> <span class="token operator">:</span> r<span class="token operator">--</span><span class="token punctuation">;</span>
-            ans <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> <span class="token function">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> l<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h3 id="计算机硬件组成"><a href="#计算机硬件组成" class="headerlink" title="计算机硬件组成"></a>计算机硬件组成</h3><h4 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU:Central Processing Unit"></a>CPU:Central Processing Unit</h4><ul>
+<li>中央处理器</li>
+</ul>
+<h4 id="内存-Memory"><a href="#内存-Memory" class="headerlink" title="内存:Memory"></a>内存:Memory</h4><ul>
+<li>程序加载到内存后运行。程序读取的数据，计算得到的结果放在内存里</li>
+</ul>
+<h4 id="主板-Motherboard"><a href="#主板-Motherboard" class="headerlink" title="主板:Motherboard"></a>主板:Motherboard</h4><ul>
+<li> 芯片组(Chipset)控制了数据在不同配件之间的流转</li>
+<li> 总线(Bus)数据在总线上高速传输</li>
+<li> 总线速度(Bus Speed)决定了数据能够传输多快</li>
+</ul>
+<h4 id="GPU-Graphics-Processing-Unit"><a href="#GPU-Graphics-Processing-Unit" class="headerlink" title="GPU(Graphics Processing Unit)"></a>GPU(Graphics Processing Unit)</h4><ul>
+<li>在显卡上(Graphics Card)，用作图形渲染，训练深度学习模型等各种计算工作</li>
+</ul>
+<h4 id="南桥-SouthBridge"><a href="#南桥-SouthBridge" class="headerlink" title="南桥(SouthBridge)"></a>南桥(SouthBridge)</h4><ul>
+<li>将CPU与硬盘、鼠标等外部设备通信</li>
+</ul>
+<h4 id="北桥-NorthBridge"><a href="#北桥-NorthBridge" class="headerlink" title="北桥(NorthBridge)"></a>北桥(NorthBridge)</h4><ul>
+<li>连接CPU与显卡、内存等之间的通信</li>
+<li>现在北桥芯片的任务已经嵌入CPU的内部</li>
+</ul>
+<h3 id="冯诺依曼机"><a href="#冯诺依曼机" class="headerlink" title="冯诺依曼机"></a>冯诺依曼机</h3><ul>
+<li>冯诺依曼机侧重于”<strong>程序存储</strong>“与”<strong>二进制执行</strong>“，并提出实现这两点必须的五个部分:<strong>控制器</strong>，<strong>运算器</strong>，<strong>存储单元</strong>，<strong>输入</strong>和<strong>输出</strong>设备。这个体系基本奠定了近现代计算机</li>
+</ul>
+<h3 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h3><p><img src="https://i.loli.net/2021/10/26/gGl5f3DairK42Jn.jpg"></p>
+<ul>
+<li>控制器(Control Unit)控制指令的执行过程</li>
+<li>运算器(Arithmetic Logic)从数字电路层面实现加法和乘法</li>
+<li>储存器(Memory Unit)自上到下为CPU高速缓存，内存，SSD硬盘，机械硬盘</li>
+<li>CPU时钟(CPU Clock)构造寄存器和内存的锁存器和触发器</li>
+<li><strong>数据通路</strong>连接了整个运算器和控制器，最终组成了CPU</li>
+</ul>
+<h3 id="计算机性能影响因素"><a href="#计算机性能影响因素" class="headerlink" title="计算机性能影响因素"></a>计算机性能影响因素</h3><h4 id="响应时间-Response-time"><a href="#响应时间-Response-time" class="headerlink" title="响应时间(Response time)"></a>响应时间(Response time)</h4><ul>
+<li>即执行时间(Execution time)</li>
+<li>跑得快</li>
+<li>性能  = 1/响应时间</li>
+</ul>
+<h4 id="吞吐率-Throughput"><a href="#吞吐率-Throughput" class="headerlink" title="吞吐率(Throughput)"></a>吞吐率(Throughput)</h4><ul>
+<li><p>即带宽(Bandwidth)</p>
+</li>
+<li><p>搬的多</p>
+</li>
+<li><p>通过多核，多找几个人搬，提升吞吐率</p>
+</li>
+</ul>
+<h3 id="CPU时钟"><a href="#CPU时钟" class="headerlink" title="CPU时钟"></a>CPU时钟</h3><p><img src="https://i.loli.net/2021/10/26/AGrq85SLaZCi4hf.png"></p>
+<ul>
+<li>A computer operates in two modes which are user mode and kernel mode. When the computer is running application software, it is in user mode. After the application software request for hardware, the computer enters kernel mode. The kernel is the core of the computer system. Subsequently, the computer frequently switches between user mode and kernel mode. Most critical tasks of the operating system are executing in the kernel mode. The <strong>key difference</strong> between User Mode and Kernel Mode is that <strong>user mode is the mode in which the applications are running and kernel mode is the privileged mode to which the computer enters when accessing hardware resources.</strong></li>
+<li><strong>Real</strong> is <strong>wall clock time</strong> - time from start to finish of the call. This is all elapsed time including time slices used by other processes and time the process spends blocked (for example if it is waiting for I/O to complete).</li>
+<li><strong>User</strong> is the amount of CPU time spent in <strong>user-mode code</strong> (outside the kernel) <em>within</em> the process. This is only actual CPU time used in <strong>executing the process</strong>. Other processes and time the process spends blocked do not count towards this figure.</li>
+<li><strong>Sys</strong> is the amount of CPU time spent in the kernel within the process. This means executing CPU time spent in system calls <em>within the kernel,</em> as opposed to library code, which is still running in user-space. Like ‘user’, this is only CPU time used by the process. See below for a brief description of kernel mode (also known as ‘supervisor’ mode) and the system call mechanism.</li>
+</ul>
+<p><code>User+Sys</code> will tell you how much actual CPU time your process used. Note that this is across all CPUs, so if the process has multiple threads (and this process is running on a computer with more than one processor) it could potentially exceed the wall clock time reported by <code>Real</code> (which usually occurs). Note that in the output these figures include the <code>User</code> and <code>Sys</code> time of all child processes (and their descendants) as well when they could have been collected.</p>
 
                 
             </div>
@@ -535,7 +546,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://bai62.github.io/2021/10/27/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day13%E3%80%91%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/">http://bai62.github.io/2021/10/27/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day13%E3%80%91%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/</a>
+                    <a href="http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/">http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -572,15 +583,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Leetcode/">
-                                    <span class="chip bg-color">Leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">每日算法</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -748,9 +751,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/">
                     <div class="card-image">
@@ -768,9 +772,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -779,6 +783,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -789,13 +794,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/25/%E3%80%90ten%E3%80%91%E8%8B%B1%E8%AF%AD%E4%BA%94%E5%A4%A9%E5%BC%BA%E5%8C%96Day3/">
+                <a href="/2021/10/27/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day13%E3%80%91%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="【ten】英语五天强化Day3">
+                        <img src="https://i.loli.net/2021/10/06/KwhLO6SlbUtxDaX.jpg" class="responsive-img" alt="【每日算法Day13】盛水最多的容器">
                         
-                        <span class="card-title">【ten】英语五天强化Day3</span>
+                        <span class="card-title">【每日算法Day13】盛水最多的容器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -806,14 +811,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                    英语
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -823,8 +828,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%8B%B1%E8%AF%AD/">
-                        <span class="chip bg-color">英语</span>
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">每日算法</span>
                     </a>
                     
                 </div>
