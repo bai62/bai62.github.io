@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【fi】计算机组成原理之计算机的基本硬件组成, Sword的博客">
+    <meta name="keywords" content="【fi】计算机组成原理之指令和运算, Sword的博客">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【fi】计算机组成原理之计算机的基本硬件组成 | Sword的博客</title>
+    <title>【fi】计算机组成原理之指令和运算 | Sword的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2021/10/06/JinzRtucbGmp3wa.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【fi】计算机组成原理之计算机的基本硬件组成</h1>
+                    <h1 class="description center-align post-title">【fi】计算机组成原理之指令和运算</h1>
                 </div>
             </div>
         </div>
@@ -480,59 +480,95 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="计算机硬件组成"><a href="#计算机硬件组成" class="headerlink" title="计算机硬件组成"></a>计算机硬件组成</h3><h4 id="CPU-Central-Processing-Unit"><a href="#CPU-Central-Processing-Unit" class="headerlink" title="CPU:Central Processing Unit"></a>CPU:Central Processing Unit</h4><ul>
-<li>中央处理器</li>
+                <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/byr_wy/article/details/100928802?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%85%A8%E5%B1%80%E5%81%8F%E7%A7%BB%E8%A1%A8&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-6-100928802.first_rank_v2_pc_rank_v29&spm=1018.2226.3001.4187">本文前半部分转自CSDN</a></p>
+<p>常见的机器指令可分为：算术类指令、数据传输类指令、逻辑类指令、条件分支类指令、无条件跳转指令</p>
+<h3 id="CPU执行指令"><a href="#CPU执行指令" class="headerlink" title="CPU执行指令"></a>CPU执行指令</h3><ul>
+<li>CPU由寄存器组成，寄存器由多个触发器或者锁存器组成</li>
+<li>N个触发器或者锁存器，就组成N bit的寄存器</li>
+<li>三种特殊寄存器：PC寄存器、指令寄存器、条件码寄存器</li>
+<li>硬件层面实现if和for循环，只需要以上三种特殊寄存器</li>
 </ul>
-<h4 id="内存-Memory"><a href="#内存-Memory" class="headerlink" title="内存:Memory"></a>内存:Memory</h4><ul>
-<li>程序加载到内存后运行。程序读取的数据，计算得到的结果放在内存里</li>
+<h3 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h3><ul>
+<li><p>函数的跳转比起if和for循环的跳转，需要记录返回的地址，这就是压栈与出栈</p>
+</li>
+<li><p>整个函数 A 所占用的所有内存空间，就是函数 A 的栈帧（Stack Frame)</p>
+</li>
+<li><p>一层层压栈之后，栈顶的内存地址是在逐渐变小而不是变大</p>
+</li>
+<li><p>rbp 又叫栈帧指针（Frame Pointer），是一个存放了当前栈帧位置的寄存器，rsp</p>
+</li>
+<li><p>函数内联：当没有嵌套调用时，将产生的函数指令插入到调用的位置进行优化</p>
+</li>
+<li><p>函数作用域内的临时变量，分配在栈上</p>
+</li>
+<li><p>把大的for循环写里面能提高CPU流水线的分支预测的准确率</p>
+<h3 id="编译、链接和装载"><a href="#编译、链接和装载" class="headerlink" title="编译、链接和装载"></a>编译、链接和装载</h3></li>
+<li><p>只有通过链接器（Linker）把多个目标文件（obj）以及调用的各种函数库链接起来，我们才能得到一个可执行文件</p>
+</li>
+<li><p>可执行文件和目标文件所使用的都是一种叫ELF格式，即可执行与可链接文件格式<br>ELF 文件里面，存储在一个叫作符号表（Symbols Table）的位置。符号表相当于一个地址簿，把名字和地址关联了起来。</p>
+</li>
+<li><p>Windows 的可执行文件格式是一种叫作PE（Portable Executable Format）的文件格式，所以在linux下执行的程序不能在windows下执行</p>
+</li>
+<li><p>可执行程序加载后占用的内存空间应该是连续的，我们需要同时加载很多个程序，并且不能让程序自己规定在内存中加载的位置</p>
+</li>
+<li><p>指令里用到的内存地址叫作虚拟内存地址（Virtual Memory Address），实际在内存硬件里面的空间地址，我们叫物理内存地址（Physical Memory Address）</p>
+</li>
+<li><p>这种找出一段连续的物理内存和虚拟内存地址进行映射的方法，我们叫分段（Segmentation）,分段造成了内存碎片问题，通过内存交换解决</p>
+</li>
+<li><p>内存分页是把整个物理内存空间切成一段段固定尺寸的大小</p>
+</li>
+<li><p>动态链接，共享库windows下为dll，linux下为so</p>
+</li>
+<li><p>在共享库的 data section 里面，保存了一张全局偏移表（GOT，Global Offset Table）。虽然共享库的代码部分的物理内存是共享的，但是数据部分是各个动态链接它的应用程序里面各加载一份的</p>
+</li>
 </ul>
-<h4 id="主板-Motherboard"><a href="#主板-Motherboard" class="headerlink" title="主板:Motherboard"></a>主板:Motherboard</h4><ul>
-<li> 芯片组(Chipset)控制了数据在不同配件之间的流转</li>
-<li> 总线(Bus)数据在总线上高速传输</li>
-<li> 总线速度(Bus Speed)决定了数据能够传输多快</li>
-</ul>
-<h4 id="GPU-Graphics-Processing-Unit"><a href="#GPU-Graphics-Processing-Unit" class="headerlink" title="GPU(Graphics Processing Unit)"></a>GPU(Graphics Processing Unit)</h4><ul>
-<li>在显卡上(Graphics Card)，用作图形渲染，训练深度学习模型等各种计算工作</li>
-</ul>
-<h4 id="南桥-SouthBridge"><a href="#南桥-SouthBridge" class="headerlink" title="南桥(SouthBridge)"></a>南桥(SouthBridge)</h4><ul>
-<li>将CPU与硬盘、鼠标等外部设备通信</li>
-</ul>
-<h4 id="北桥-NorthBridge"><a href="#北桥-NorthBridge" class="headerlink" title="北桥(NorthBridge)"></a>北桥(NorthBridge)</h4><ul>
-<li>连接CPU与显卡、内存等之间的通信</li>
-<li>现在北桥芯片的任务已经嵌入CPU的内部</li>
-</ul>
-<h3 id="冯诺依曼机"><a href="#冯诺依曼机" class="headerlink" title="冯诺依曼机"></a>冯诺依曼机</h3><ul>
-<li>冯诺依曼机侧重于”<strong>程序存储</strong>“与”<strong>二进制执行</strong>“，并提出实现这两点必须的五个部分:<strong>控制器</strong>，<strong>运算器</strong>，<strong>存储单元</strong>，<strong>输入</strong>和<strong>输出</strong>设备。这个体系基本奠定了近现代计算机</li>
-</ul>
-<h3 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h3><p><img src="https://i.loli.net/2021/10/26/gGl5f3DairK42Jn.jpg"></p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><h4 id="补码的两种表示方式"><a href="#补码的两种表示方式" class="headerlink" title="补码的两种表示方式"></a>补码的两种表示方式</h4><p><img src="https://i.loli.net/2021/10/27/bhD8Eo4mivO2xAu.png"></p>
 <ul>
-<li>控制器(Control Unit)控制指令的执行过程</li>
-<li>运算器(Arithmetic Logic)从数字电路层面实现加法和乘法</li>
-<li>储存器(Memory Unit)自上到下为CPU高速缓存，内存，SSD硬盘，机械硬盘</li>
-<li>CPU时钟(CPU Clock)构造寄存器和内存的锁存器和触发器</li>
-<li><strong>数据通路</strong>连接了整个运算器和控制器，最终组成了CPU</li>
-</ul>
-<h3 id="计算机性能影响因素"><a href="#计算机性能影响因素" class="headerlink" title="计算机性能影响因素"></a>计算机性能影响因素</h3><h4 id="响应时间-Response-time"><a href="#响应时间-Response-time" class="headerlink" title="响应时间(Response time)"></a>响应时间(Response time)</h4><ul>
-<li>即执行时间(Execution time)</li>
-<li>跑得快</li>
-<li>性能  = 1/响应时间</li>
-</ul>
-<h4 id="吞吐率-Throughput"><a href="#吞吐率-Throughput" class="headerlink" title="吞吐率(Throughput)"></a>吞吐率(Throughput)</h4><ul>
-<li><p>即带宽(Bandwidth)</p>
+<li><p><code>-7 = -1*2**3 + 0*2**2 + 0*2**1 + 1*2**0</code></p>
 </li>
-<li><p>搬的多</p>
+<li><p><code>-5 = -1*2**3 + 0*2**2 + 1*2**1 + 1*2**0</code></p>
 </li>
-<li><p>通过多核，多找几个人搬，提升吞吐率</p>
+<li><p>用补码来表示负数，使得我们的整数相加变得很容易，不需要做任何特殊处理，只是把它当成普通的二进制相加，就能得到正确的结果</p>
 </li>
 </ul>
-<h3 id="CPU时钟"><a href="#CPU时钟" class="headerlink" title="CPU时钟"></a>CPU时钟</h3><p><img src="https://i.loli.net/2021/10/26/AGrq85SLaZCi4hf.png"></p>
+<h4 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h4><ul>
+<li>ASCII、Unicode是字符集，UTF-8是字符编码</li>
+<li>二进制序列化储存数据比直接存储盛夏很多空间</li>
+</ul>
+<h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><p><img src="https://i.loli.net/2021/10/29/jlyaRvODEhimCX7.png"></p>
+<h3 id="加法器"><a href="#加法器" class="headerlink" title="加法器"></a>加法器</h3><h4 id="一位全加器"><a href="#一位全加器" class="headerlink" title="一位全加器"></a>一位全加器</h4><ul>
+<li>Ci为1的情况：A,B均为1；A,B其中一个为1(异或)，C为1</li>
+<li>Si为1的情况：A,B中一个1，C为0；A,B相同，</li>
+</ul>
+<p><img src="https://i.loli.net/2021/10/28/cjp35GhRJk872lS.png"></p>
+<p><img src="https://i.loli.net/2021/10/29/fVn3bLrIJxpDFTC.jpg"></p>
 <ul>
-<li>A computer operates in two modes which are user mode and kernel mode. When the computer is running application software, it is in user mode. After the application software request for hardware, the computer enters kernel mode. The kernel is the core of the computer system. Subsequently, the computer frequently switches between user mode and kernel mode. Most critical tasks of the operating system are executing in the kernel mode. The <strong>key difference</strong> between User Mode and Kernel Mode is that <strong>user mode is the mode in which the applications are running and kernel mode is the privileged mode to which the computer enters when accessing hardware resources.</strong></li>
-<li><strong>Real</strong> is <strong>wall clock time</strong> - time from start to finish of the call. This is all elapsed time including time slices used by other processes and time the process spends blocked (for example if it is waiting for I/O to complete).</li>
-<li><strong>User</strong> is the amount of CPU time spent in <strong>user-mode code</strong> (outside the kernel) <em>within</em> the process. This is only actual CPU time used in <strong>executing the process</strong>. Other processes and time the process spends blocked do not count towards this figure.</li>
-<li><strong>Sys</strong> is the amount of CPU time spent in the kernel within the process. This means executing CPU time spent in system calls <em>within the kernel,</em> as opposed to library code, which is still running in user-space. Like ‘user’, this is only CPU time used by the process. See below for a brief description of kernel mode (also known as ‘supervisor’ mode) and the system call mechanism.</li>
+<li><p>通过一个异或门计算出个位，通过一个与门计算出是否进位，打包称为半加器</p>
+</li>
+<li><p>两个半加器和一个或门，组成全加器</p>
+</li>
 </ul>
-<p><code>User+Sys</code> will tell you how much actual CPU time your process used. Note that this is across all CPUs, so if the process has multiple threads (and this process is running on a computer with more than one processor) it could potentially exceed the wall clock time reported by <code>Real</code> (which usually occurs). Note that in the output these figures include the <code>User</code> and <code>Sys</code> time of all child processes (and their descendants) as well when they could have been collected.</p>
+<p><img src="https://i.loli.net/2021/10/29/ovGyrLMZHniYjVk.jpg"></p>
+<h4 id="串行加法-器"><a href="#串行加法-器" class="headerlink" title="串行加法 器"></a>串行加法 器</h4><p><img src="https://i.loli.net/2021/10/28/FktDB96dnQAeqZc.png"></p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><h4 id="BCD编码"><a href="#BCD编码" class="headerlink" title="BCD编码"></a>BCD编码</h4><ul>
+<li><p>定点数12.45, 57.83</p>
+</li>
+<li><p>32 个比特，每四个比特表示0~9的数字。 一种八个数，从 0 到 999999.99 这样 1 亿个实数了。</p>
+</li>
+<li><p>BCD编码：定点数</p>
+</li>
+</ul>
+<h4 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h4><ul>
+<li><p>32bit浮点数组成(sef)：1bit符号位+8bit指数位+23比特有效数位，表示为科学计数法</p>
+</li>
+<li><p>浮点数先对齐再计算，所以对应指数位较小的数在计算之前有效位会右移，所以最右侧有效位精度丢失</p>
+</li>
+<li><p>Kahan summation解决精度丢失</p>
+<ul>
+<li>在每次的计算过程中，都用一次减法，把当前加法计算中损失的精度记录下来，然后在后面的循环中，把这个精度损失放在要加的小数上，再做一次运算</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -559,7 +595,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/">http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/</a>
+                    <a href="http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E5%92%8C%E8%BF%90%E7%AE%97/">http://bai62.github.io/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E5%92%8C%E8%BF%90%E7%AE%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -772,13 +808,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E5%92%8C%E8%BF%90%E7%AE%97/">
+                <a href="/2021/10/28/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day14%E3%80%91%E9%87%8D%E6%96%B0%E6%8E%92%E5%BA%8F%E7%9A%84%E5%88%B02%E7%9A%84%E5%B9%82/">
                     <div class="card-image">
                         
                         
-                        <img src="https://i.loli.net/2021/10/06/JinzRtucbGmp3wa.jpg" class="responsive-img" alt="【fi】计算机组成原理之指令和运算">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【每日算法Day14】重新排序的到2的幂">
                         
-                        <span class="card-title">【fi】计算机组成原理之指令和运算</span>
+                        <span class="card-title">【每日算法Day14】重新排序的到2的幂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -789,57 +825,8 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    计算机知识
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">计算机组成原理</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/27/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day13%E3%80%91%E7%9B%9B%E6%B0%B4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%AE%B9%E5%99%A8/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://i.loli.net/2021/10/06/KwhLO6SlbUtxDaX.jpg" class="responsive-img" alt="【每日算法Day13】盛水最多的容器">
-                        
-                        <span class="card-title">【每日算法Day13】盛水最多的容器</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -861,6 +848,55 @@
                     
                     <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
                         <span class="chip bg-color">每日算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/27/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="【fi】计算机组成原理之计算机的基本硬件组成">
+                        
+                        <span class="card-title">【fi】计算机组成原理之计算机的基本硬件组成</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/" class="post-category">
+                                    计算机知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>
