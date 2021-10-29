@@ -498,7 +498,7 @@
         <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//去重</span>
                 <span class="token keyword">continue</span><span class="token punctuation">;</span>
 
             <span class="token keyword">int</span> L <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> R <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
@@ -511,9 +511,9 @@
                     
                     L<span class="token operator">++</span><span class="token punctuation">,</span> R<span class="token operator">--</span><span class="token punctuation">;</span>
 
-                    <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token operator">&amp;&amp;</span>nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>L<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token operator">&amp;&amp;</span>nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>L<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//去重</span>
                         L<span class="token operator">++</span><span class="token punctuation">;</span>
-                    <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token operator">&amp;&amp;</span>nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>R<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token operator">&amp;&amp;</span>nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>R<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//q</span>
                         R<span class="token operator">--</span><span class="token punctuation">;</span>
                 <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>sum <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
                     R<span class="token operator">--</span><span class="token punctuation">;</span>
@@ -771,18 +771,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/29/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">
+                <a href="/2021/10/29/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="【每日算法Day15】三数之和">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【fi】计算机组成原理之数据通路">
                         
-                        <span class="card-title">【每日算法Day15】三数之和</span>
+                        <span class="card-title">【fi】计算机组成原理之数据通路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,31 +791,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/">
-                        <span class="chip bg-color">Leetcode</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">每日算法</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>
@@ -830,13 +824,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/29/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%A4%84%E7%90%86%E5%99%A8/">
+                <a href="/2021/10/28/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day14%E3%80%91%E9%87%8D%E6%96%B0%E6%8E%92%E5%BA%8F%E7%9A%84%E5%88%B02%E7%9A%84%E5%B9%82/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="【fi】计算机组成原理之处理器">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【每日算法Day14】重新排序的到2的幂">
                         
-                        <span class="card-title">【fi】计算机组成原理之处理器</span>
+                        <span class="card-title">【每日算法Day14】重新排序的到2的幂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -847,14 +841,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    计算机知识
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -864,8 +858,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">计算机组成原理</span>
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">每日算法</span>
                     </a>
                     
                 </div>
