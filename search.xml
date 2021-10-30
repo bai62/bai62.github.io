@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【fi】计算机组成原理之总线与IO系统</title>
+      <link href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h2><ul><li>总线是一组能为多个部件<strong>分时共享</strong>的公共信息传送线路</li><li>4根信号线组成一根总线，所有硬件部件都可以通过这跟总线传递数据</li><li>可并行发送4bit数据。同一时刻只能有一个部件发送数据，但是可以有多个部件接受数据</li></ul><p><img src="https://i.loli.net/2021/10/30/xm8Q64fBn5ORF29.png"></p><h2 id="I-O系统"><a href="#I-O系统" class="headerlink" title="I/O系统"></a>I/O系统</h2><p>数据流：键盘 -&gt; IO接口的数据寄存器 -&gt; 数据总线 -&gt; CPU某寄存器  -&gt; 主存</p><h3 id="CPU控制I-O设备"><a href="#CPU控制I-O设备" class="headerlink" title="CPU控制I/O设备"></a>CPU控制I/O设备</h3><ul><li>I/O接口：主机与I/O设备之间的桥梁</li></ul><h4 id="程序查询方式"><a href="#程序查询方式" class="headerlink" title="程序查询方式"></a>程序查询方式</h4><p>I/O控制器中的<strong>状态寄存器</strong>轮询检查，知道检测到状态已完成，再从数据寄存器中取出数据</p><h4 id="程序中断方式"><a href="#程序中断方式" class="headerlink" title="程序中断方式"></a>程序中断方式</h4><ul><li>高速IO设备会多次造成CPU中断</li></ul><p>CPU先去执行其他程序，键盘I/O完成后向CPU发出中断请求，CPU响应中断请求，并取走请求</p><h3 id="DMA"><a href="#DMA" class="headerlink" title="DMA"></a>DMA</h3><ul><li>主存与高速I/O设备有一条直通数据通路(DMA Bus)。CPU向DMA接口发出读写命令，并指明主存地址、辅存地址、外设读写地址、读写数据量等参数</li><li>完成一整次读写，DMA才会向CPU发起中断请求</li></ul><p><img src="https://i.loli.net/2021/10/30/Lw31VyoTr7i86qK.png"></p><ul><li>DMA和CPU不能同时访问主存</li></ul><h4 id="外设使用DMA的过程"><a href="#外设使用DMA的过程" class="headerlink" title="外设使用DMA的过程"></a>外设使用DMA的过程</h4><ol><li>接受外设发出的DMA请求(外设传送一个字的请求)，并向CPU发出总线请求</li><li>CPU响应总线请求，发出总线响应信号，接管总线控制权，进入DMA操作周期</li><li>确定传送数据的主存单元地址及长度，并能自动修改主存地址计数和传送长度计数。</li><li>规定数据在主存和外设间的传送方向，发出读写等控制信号，执行数据传送操作</li><li>向CPU报告DMA操作的结束</li></ol><p><img src="https://i.loli.net/2021/10/30/vBDLGPSpWcUbHX7.png"></p><p><img src="https://i.loli.net/2021/10/30/Tx5Jl1EfXVI23cH.png"></p><h3 id="通道执行方式"><a href="#通道执行方式" class="headerlink" title="通道执行方式"></a>通道执行方式</h3><p><img src="https://i.loli.net/2021/10/30/f3iF9SsJmqlNRUk.png"></p><ul><li>IO指令：CPU执行的指令<ul><li>操作码，命令码，设备码</li></ul></li><li>通道指令：通道执行的指令<ul><li>通道程序提前编制好放在主存中</li><li>CPU执行I/O指令对通道发出命令，由通道执行一系列通道命令，代替CPU对I/O设备进行管理</li></ul></li></ul><h4 id="VRAM-显存"><a href="#VRAM-显存" class="headerlink" title="VRAM(显存)"></a>VRAM(显存)</h4><ul><li>帧频：屏幕刷新率，60Hz为屏幕一秒钟刷新60次</li><li>分辨率：宽，高像素的乘积</li></ul><p>VRAM最小容量(一帧理论最小值) = 分辨率 * 灰度级位数</p><p>VRAM带宽 = 分辨率 * 灰度级位数 * 帧频 </p><ul><li>显存除了作为当前显示帧的缓存，还会用于保存即将渲染的图像数据(游戏)</li><li>集成显卡的计算机，会将一片内存作为显存</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机组成原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【每日算法Day15】只出现一次的数字III</title>
       <link href="/2021/10/30/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97III/"/>
       <url>/2021/10/30/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97III/</url>
