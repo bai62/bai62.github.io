@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>【fi】计算机组成原理之储存系统</title>
+      <link href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%82%A8%E5%AD%98%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%82%A8%E5%AD%98%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="存储器概述"><a href="#存储器概述" class="headerlink" title="存储器概述"></a>存储器概述</h2><p><img src="https://i.loli.net/2021/10/30/YkbeODrR1gUf4pM.png"></p><p><img src="https://i.loli.net/2021/10/30/Agf5IJVZkOTG7p1.png"></p><ul><li>辅存中的数据只有被调入到主存中才可以被CPU访问</li><li>主存–辅存：实现虚拟储存系统，解决了主存容量不够的问题</li><li>Cache–主存：解决了主存与CPU速度不匹配的问题</li></ul><table><thead><tr><th align="center">储存器</th><th align="center">介质</th></tr></thead><tbody><tr><td align="center">Cache</td><td align="center">SRAM</td></tr><tr><td align="center">内存</td><td align="center">DRA</td></tr><tr><td align="center">硬盘</td><td align="center">SSD</td></tr><tr><td align="center">硬盘</td><td align="center">HDD</td></tr></tbody></table><h3 id="半导体随机存储器"><a href="#半导体随机存储器" class="headerlink" title="半导体随机存储器"></a>半导体随机存储器</h3><h4 id="SRAM"><a href="#SRAM" class="headerlink" title="SRAM"></a>SRAM</h4><ul><li>Static Random Access Memory</li><li>用于缓存</li></ul><h4 id="DRAM"><a href="#DRAM" class="headerlink" title="DRAM"></a>DRAM</h4><ul><li>Dynamic Random Access Memory</li><li>用于主存</li><li>DRAM的数据访问电路和刷新电路都比SRAM复杂，访问延时更长</li></ul><h2 id="高速缓冲储存器"><a href="#高速缓冲储存器" class="headerlink" title="高速缓冲储存器"></a>高速缓冲储存器</h2><h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h3><h4 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h4><p>最近未来要用到的信息(指令和数据)，很可能与现在正在使用的信息在储存空间上是相邻的</p><h4 id="时间局部性"><a href="#时间局部性" class="headerlink" title="时间局部性"></a>时间局部性</h4><p>最近未来要用到的信息(指令和数据)，很可能是现在正在使用到的信息(循环结构的指令代码)</p><h4 id="局部性原理的应用"><a href="#局部性原理的应用" class="headerlink" title="局部性原理的应用"></a>局部性原理的应用</h4><p>根据局部性原理，可以把CPU目前访问的地址“周围”的部分数据放到Cache中</p><ul><li>二维数组按“列优先”访问二维数组，空间局部性更差</li></ul><h2 id="虚拟储存器"><a href="#虚拟储存器" class="headerlink" title="虚拟储存器"></a>虚拟储存器</h2><h3 id="页式储存系统"><a href="#页式储存系统" class="headerlink" title="页式储存系统"></a>页式储存系统</h3><ul><li>一个进程在逻辑上分为若干个大小相等的“页面”，每个页面可以按需离散地放入不同的主存块中</li><li>页表在主内存中</li></ul><h4 id="页表的结构"><a href="#页表的结构" class="headerlink" title="页表的结构"></a>页表的结构</h4><ul><li>有效位：页面是否已被调入主存</li><li>访问位：被访问次数低的页面优先被替换</li><li>脏位：在主存中的副本数据是否被修改</li><li>物理页：主存块号</li></ul><p><img src="https://i.loli.net/2021/10/30/Kzv4lm9kJ7GCj8V.png"></p><h3 id="快表-TLB"><a href="#快表-TLB" class="headerlink" title="快表(TLB)"></a>快表(TLB)</h3><p><img src="https://i.loli.net/2021/10/30/XeE6tfmkG5gvMQz.png"></p><ul><li>快表中储存的室页表项的副本；cache中储存的是主存块的副本</li><li>快表使用SRAM，相联存储器加快地址变换的速度</li></ul><h4 id="虚拟存储系统"><a href="#虚拟存储系统" class="headerlink" title="虚拟存储系统"></a>虚拟存储系统</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机组成原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【fi】计算机组成原理之指令流水线</title>
+      <link href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF/"/>
+      <url>/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF/</url>
+      
+        <content type="html"><![CDATA[<h2 id="指令流水线的概念"><a href="#指令流水线的概念" class="headerlink" title="指令流水线的概念"></a>指令流水线的概念</h2><ul><li>多功能流水线是指流水线的各段可以进行不同的连接，在同一时间或不同时间内，通过不同的连接方式实现不同的功能</li><li>静态流水线是同时只能完成一种功能的多功能流水线</li></ul><h3 id="单指令处理器-Single-Cycle-Processor"><a href="#单指令处理器-Single-Cycle-Processor" class="headerlink" title="单指令处理器(Single Cycle Processor)"></a>单指令处理器(Single Cycle Processor)</h3><p><img src="https://i.loli.net/2021/10/30/OnkXZWabqtPeYBh.png" alt="image-20211030091334874"></p><h3 id="五级流水线"><a href="#五级流水线" class="headerlink" title="五级流水线"></a>五级流水线</h3><p><img src="https://i.loli.net/2021/10/30/UcA1MWjSvzEu4TO.png" alt="image-20211030091318760"></p><ul><li>将一条指令分为取指令、译码、执行、访存、写回五个阶段</li><li>当过了5个CPU时钟周期后，可以保证每个时钟周期都有一条指令执行完成，即实现了一个CPU的时钟周期；由于取指阶段肯定是所有5个阶段里耗时最长的，即一个CPU的时钟周期可以设置为取指阶段的花费时间</li><li>每一个流水线级的时间都是一个CPU的时钟周期，但是其中实际操作的时间，可能短于一个CPU时钟周期。比如我们译码器其实就是一个组合逻辑电路，门延迟很低，需要等待。</li></ul><h3 id="超长流水线的性能瓶颈"><a href="#超长流水线的性能瓶颈" class="headerlink" title="超长流水线的性能瓶颈"></a>超长流水线的性能瓶颈</h3><ul><li>流水线每一级后都有一个缓冲寄存器(锁存器)，保存当前阶段的执行结果，供给下一水段使用</li><li>指令的执行有 3 纳秒，也就是 3000 皮秒。我们需要 20 级的流水线，那流水线寄存器的写入就需要花费 400 皮秒</li><li>提升流水线的深度，必须提升CPU主频，增加晶体管数目，导致CPU功耗变大</li><li>流水线越长，冒险(hazard)问题就越难以解决。不能把后面没有依赖关系的指令放到前面来执行(乱序技术)。</li><li>没有依赖关系的三条流水线可能会因超标量流水线成为一条流水线</li></ul><h2 id="冒险和预测"><a href="#冒险和预测" class="headerlink" title="冒险和预测"></a>冒险和预测</h2><p><a href="https://www.cnblogs.com/lfri/p/10053598.html">该部分转自博客园</a></p><h3 id="结构冒险-Structural-Hazard"><a href="#结构冒险-Structural-Hazard" class="headerlink" title="结构冒险(Structural Hazard)"></a>结构冒险(Structural Hazard)</h3><ul><li>结构冒险：两条指令同时需要相同的硬件</li><li>CPU访问高速内存，高速缓存分成了指令缓存和数据缓存两部分</li></ul><h4 id="读指令和读数据冲突"><a href="#读指令和读数据冲突" class="headerlink" title="读指令和读数据冲突"></a>读指令和读数据冲突</h4><p>如果指令和数据放在同一个储存器中，则不能同时读储存器</p><p><img src="https://i.loli.net/2021/10/30/flZq92HYkR7iEtn.png"></p><h5 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h5><p>流水线停顿(stall)，产生空泡(bubble)</p><p><img src="https://i.loli.net/2021/10/30/XW8ijLeOrcT9KsF.png"></p><h5 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h5><p>设置指令高速缓存和数据高速缓存(指令和数据在主存储器中的存储没有区分，符合冯诺依曼结构)</p><h4 id="读寄存器和写寄存器的冲突"><a href="#读寄存器和写寄存器的冲突" class="headerlink" title="读寄存器和写寄存器的冲突"></a>读寄存器和写寄存器的冲突</h4><p><img src="https://i.loli.net/2021/10/30/BvzTVgdsk3AxPG2.png"></p><h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p>前半个周期写，后半个周期读，并且设置独立的读写端口</p><h3 id="数据冒险-Data-Hazard"><a href="#数据冒险-Data-Hazard" class="headerlink" title="数据冒险(Data Hazard)"></a>数据冒险(Data Hazard)</h3><ul><li>数据冒险：通知执行多个指令之间，由<strong>数据依赖</strong>的情况</li><li>原本回写运算结果是在WB 阶段，直通是指在运算结果确定的EX 阶段，将数据直接传递给下一个指令</li></ul><h4 id="先写后读-Read-After-Write"><a href="#先写后读-Read-After-Write" class="headerlink" title="先写后读(Read After Write)"></a>先写后读(Read After Write)</h4><ul><li>数据依赖，读依赖于之前的写正常的依赖关系所以叫数据依赖</li></ul><p><img src="https://i.loli.net/2021/10/30/K1mkSLig8P9NQso.png"></p><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> n1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token keyword">int</span> n2 <span class="token operator">=</span> n1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> #先写后读<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h4 id="先读后写"><a href="#先读后写" class="headerlink" title="先读后写"></a>先读后写</h4><ul><li>反依赖，要保证读到写之前的数据，与正常的相反叫反依赖</li></ul><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> n1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token keyword">int</span> n2 <span class="token operator">=</span> <span class="token number">1</span>；n2 <span class="token operator">=</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span> #先读后写<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h4 id="写后再写"><a href="#写后再写" class="headerlink" title="写后再写"></a>写后再写</h4><ul><li>输出依赖</li></ul><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h4 id="停顿和冒泡解决数据冒险"><a href="#停顿和冒泡解决数据冒险" class="headerlink" title="停顿和冒泡解决数据冒险"></a>停顿和冒泡解决数据冒险</h4><p>流水线停顿(pipeline stall)和流水线冒泡(pipeline bubbling)并不是真正让流水线停下来，而是插入一个nop操作</p><p><img src="https://i.loli.net/2021/10/30/LdnNGSMrzXvaoy5.png"></p><h3 id="控制冒险-Control-Hazard"><a href="#控制冒险-Control-Hazard" class="headerlink" title="控制冒险(Control Hazard)"></a>控制冒险(Control Hazard)</h3><p>程序存在跳转语句，如果程序的实际执行路径是要跳转到其他的地址去执行，那么流水线中已经做的这些取指和译码工作就白做了，这就是流水线的控制冒险。此时，处理器需要<strong>排空流水线</strong>，跳转到新的地址处重新进入流水线。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机组成原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【fi】计算机组成原理之数据通路</title>
       <link href="/2021/10/29/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF/"/>
       <url>/2021/10/29/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF/</url>
