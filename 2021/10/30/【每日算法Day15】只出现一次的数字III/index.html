@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【fi】计算机组成原理之存储系统, Sword的博客">
+    <meta name="keywords" content="【每日算法Day15】只出现一次的数字III, Sword的博客">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【fi】计算机组成原理之存储系统 | Sword的博客</title>
+    <title>【每日算法Day15】只出现一次的数字III | Sword的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【fi】计算机组成原理之存储系统</h1>
+                    <h1 class="description center-align post-title">【每日算法Day15】只出现一次的数字III</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                                <span class="chip bg-color">计算机组成原理</span>
+                            <a href="/tags/Leetcode/">
+                                <span class="chip bg-color">Leetcode</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">每日算法</span>
                             </a>
                         
                     </div>
@@ -443,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
-                                计算机组成原理
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -480,68 +484,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="存储器概述"><a href="#存储器概述" class="headerlink" title="存储器概述"></a>存储器概述</h2><p><img src="https://i.loli.net/2021/10/30/YkbeODrR1gUf4pM.png" alt="img"></p>
-<p><img src="https://i.loli.net/2021/10/30/Agf5IJVZkOTG7p1.png" alt="img"></p>
-<ul>
-<li>辅存中的数据只有被调入到主存中才可以被CPU访问</li>
-<li>主存–辅存：实现虚拟储存系统，解决了主存容量不够的问题</li>
-<li>Cache–主存：解决了主存与CPU速度不匹配的问题</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">储存器</th>
-<th align="center">介质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Cache</td>
-<td align="center">SRAM</td>
-</tr>
-<tr>
-<td align="center">内存</td>
-<td align="center">DRA</td>
-</tr>
-<tr>
-<td align="center">硬盘</td>
-<td align="center">SSD</td>
-</tr>
-<tr>
-<td align="center">硬盘</td>
-<td align="center">HDD</td>
-</tr>
-</tbody></table>
-<h3 id="半导体随机存储器"><a href="#半导体随机存储器" class="headerlink" title="半导体随机存储器"></a>半导体随机存储器</h3><h4 id="SRAM"><a href="#SRAM" class="headerlink" title="SRAM"></a>SRAM</h4><ul>
-<li>Static Random Access Memory</li>
-<li>用于缓存</li>
-</ul>
-<h4 id="DRAM"><a href="#DRAM" class="headerlink" title="DRAM"></a>DRAM</h4><ul>
-<li>Dynamic Random Access Memory</li>
-<li>用于主存</li>
-<li>DRAM的数据访问电路和刷新电路都比SRAM复杂，访问延时更长</li>
-</ul>
-<h2 id="高速缓冲储存器"><a href="#高速缓冲储存器" class="headerlink" title="高速缓冲储存器"></a>高速缓冲储存器</h2><h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h3><h4 id="空间局部性"><a href="#空间局部性" class="headerlink" title="空间局部性"></a>空间局部性</h4><p>最近未来要用到的信息(指令和数据)，很可能与现在正在使用的信息在储存空间上是相邻的</p>
-<h4 id="时间局部性"><a href="#时间局部性" class="headerlink" title="时间局部性"></a>时间局部性</h4><p>最近未来要用到的信息(指令和数据)，很可能是现在正在使用到的信息(循环结构的指令代码)</p>
-<h4 id="局部性原理的应用"><a href="#局部性原理的应用" class="headerlink" title="局部性原理的应用"></a>局部性原理的应用</h4><p>根据局部性原理，可以把CPU目前访问的地址“周围”的部分数据放到Cache中</p>
-<ul>
-<li>二维数组按“列优先”访问二维数组，空间局部性更差</li>
-</ul>
-<h2 id="虚拟储存器"><a href="#虚拟储存器" class="headerlink" title="虚拟储存器"></a>虚拟储存器</h2><h3 id="页式储存系统"><a href="#页式储存系统" class="headerlink" title="页式储存系统"></a>页式储存系统</h3><ul>
-<li>一个进程在逻辑上分为若干个大小相等的“页面”，每个页面可以按需离散地放入不同的主存块中</li>
-<li>页表在主内存中</li>
-</ul>
-<h4 id="页表的结构"><a href="#页表的结构" class="headerlink" title="页表的结构"></a>页表的结构</h4><ul>
-<li>有效位：页面是否已被调入主存</li>
-<li>访问位：被访问次数低的页面优先被替换</li>
-<li>脏位：在主存中的副本数据是否被修改</li>
-<li>物理页：主存块号</li>
-</ul>
-<p><img src="https://i.loli.net/2021/10/30/Kzv4lm9kJ7GCj8V.png" alt="img"></p>
-<h3 id="快表-TLB"><a href="#快表-TLB" class="headerlink" title="快表(TLB)"></a>快表(TLB)</h3><p><img src="https://i.loli.net/2021/10/30/XeE6tfmkG5gvMQz.png" alt="img"></p>
-<ul>
-<li>快表中储存的室页表项的副本；cache中储存的是主存块的副本</li>
-<li>快表使用SRAM，相联存储器加快地址变换的速度</li>
-</ul>
+                <h4 id="Leetcode264-只出现一次的数字-III"><a href="#Leetcode264-只出现一次的数字-III" class="headerlink" title="Leetcode264,只出现一次的数字 III"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii/">Leetcode264,只出现一次的数字 III</a></h4><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次。 找出只出现一次的那两个元素。你可以按 任意顺序 返回答案。</p>
+<p>进阶：你的算法应该具有线性时间复杂度。你能否仅使用常数空间复杂度来实现？</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>示例 1：</p>
+<p>输入：nums = [1,2,1,3,2,5]<br>输出：[3,5]<br>解释：[5, 3] 也是有效的答案。<br>示例 2：</p>
+<p>输入：nums = [-1,0]<br>输出：[-1,0]<br>示例 3：</p>
+<p>输入：nums = [0,1]<br>输出：[1,0]<br>提示：</p>
+<p>2 &lt;= nums.length &lt;= 3 * 104<br>-231 &lt;= nums[i] &lt;= 231 - 1<br>除两个只出现一次的整数外，nums 中的其他数字都出现两次</p>
+<h3 id="题解-O-logn"><a href="#题解-O-logn" class="headerlink" title="题解(O(logn))"></a>题解(O(logn))</h3><p>遍历数组，第一次出现时插入set，第二次出现时删除set。随后set中剩下的元素则为仅出现过一次的元素</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        unordered_set<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> check<span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>check<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                check<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>check<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                check<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> x<span class="token operator">:</span>check<span class="token punctuation">)</span>
+            nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -568,7 +538,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://bai62.github.io/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/">http://bai62.github.io/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</a>
+                    <a href="http://bai62.github.io/2021/10/30/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97III/">http://bai62.github.io/2021/10/30/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97III/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,8 +576,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                                    <span class="chip bg-color">计算机组成原理</span>
+                                <a href="/tags/Leetcode/">
+                                    <span class="chip bg-color">Leetcode</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">每日算法</span>
                                 </a>
                             
                         </div>
@@ -777,9 +751,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/30/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day15%E3%80%91%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97III/">
                     <div class="card-image">
@@ -797,9 +772,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -812,6 +787,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -834,13 +810,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF/">
+                <a href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="【fi】计算机组成原理之指令流水线">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【fi】计算机组成原理之存储系统">
                         
-                        <span class="card-title">【fi】计算机组成原理之指令流水线</span>
+                        <span class="card-title">【fi】计算机组成原理之存储系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
