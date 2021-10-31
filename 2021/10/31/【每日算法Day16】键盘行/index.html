@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【每日算法Day1】Fizz-Buzz, Sword的博客">
+    <meta name="keywords" content="【每日算法Day16】键盘行, Sword的博客">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【每日算法Day1】Fizz-Buzz | Sword的博客</title>
+    <title>【每日算法Day16】键盘行 | Sword的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【每日算法Day1】Fizz-Buzz</h1>
+                    <h1 class="description center-align post-title">【每日算法Day16】键盘行</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">每日算法</span>
+                            <a href="/tags/Leetcode/">
+                                <span class="chip bg-color">Leetcode</span>
                             </a>
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">每日算法</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                算法
+                            <a href="/categories/Leetcode/" class="post-category">
+                                Leetcode
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-13
+                    2021-10-31
                 </div>
                 
 
@@ -484,63 +484,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fizz-buzz/">LeetCode198.Fizz Buzz</a></p>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个整数 n ，找出从 1 到 n 各个整数的 Fizz Buzz 表示，并用字符串数组 answer（下标从 1 开始）返回结果，其中：</p>
-<blockquote>
-<p>answer[i] == “FizzBuzz” 如果 i 同时是 3 和 5 的倍数。<br>answer[i] == “Fizz” 如果 i 是 3 的倍数。<br>answer[i] == “Buzz” 如果 i 是 5 的倍数。<br>answer[i] == i 如果上述条件全不满足。</p>
-</blockquote>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="示例-1："><a href="#示例-1：" class="headerlink" title="示例 1："></a>示例 1：</h4><pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 3
-输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="示例-2："><a href="#示例-2：" class="headerlink" title="示例 2："></a>示例 2：</h4><pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 5
-输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="示例-3："><a href="#示例-3：" class="headerlink" title="示例 3："></a>示例 3：</h4><pre class="line-numbers language-none"><code class="language-none">输入：n &#x3D; 15
-输出：[&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;,&quot;Fizz&quot;,&quot;7&quot;,&quot;8&quot;,&quot;Fizz&quot;,&quot;Buzz&quot;,&quot;11&quot;,&quot;Fizz&quot;,&quot;13&quot;,&quot;14&quot;,&quot;FizzBuzz&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><pre class="line-numbers language-none"><code class="language-none">1 &lt;&#x3D; n &lt;&#x3D; 104<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><p>如果 i 是 3 的倍数，Fizz</p>
-<p>如果 i 是 5 的倍数，Buzz</p>
-<p>如果 i 同时是 3 和 5 的倍数，先加Fizz后加Buzz</p>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+                <h4 id="Leetcode500-键盘行"><a href="#Leetcode500-键盘行" class="headerlink" title="Leetcode500. 键盘行"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/keyboard-row/">Leetcode500. 键盘行</a></h4><p>给你一个字符串数组 words ，只返回可以使用在 美式键盘 同一行的字母打印出来的单词。键盘如下图所示。</p>
+<p>美式键盘 中：</p>
+<p>第一行由字符 “qwertyuiop” 组成。<br>第二行由字符 “asdfghjkl” 组成。<br>第三行由字符 “zxcvbnm” 组成。</p>
+<p><img src="https://i.loli.net/2021/10/31/A5ImunMXL3vCVpw.png"></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>示例 1：</p>
+<p>输入：words = [“Hello”,”Alaska”,”Dad”,”Peace”]<br>输出：[“Alaska”,”Dad”]<br>示例 2：</p>
+<p>输入：words = [“omk”]<br>输出：[]<br>示例 3：</p>
+<p>输入：words = [“adsdf”,”sfd”]<br>输出：[“adsdf”,”sfd”]</p>
+<p>提示：</p>
+<p>1 &lt;= words.length &lt;= 20<br>1 &lt;= words[i].length &lt;= 100<br>words[i] 由英文字母（小写和大写字母）组成</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>首先判断字符串的第一个字符，进行分类。由于每个分类都要遍历字符串来检查匹配情况，检查字符是否匹配的代码被封装成<code>checkStr() </code>函数，将需要比较的两个字符串传入，返回布尔值表示是否匹配</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">fizzBuzz</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    
-    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> v<span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>string x<span class="token punctuation">,</span> string str<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> x<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        string str<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            str<span class="token operator">+=</span><span class="token string">"Fizz"</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            str<span class="token operator">+=</span><span class="token string">"Buzz"</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token operator">==</span><span class="token string">""</span><span class="token punctuation">)</span> <span class="token comment">//优于if(i%3&amp;&amp;i%5)</span>
-            str<span class="token operator">=</span><span class="token function">to_string</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        v<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-    
-    <span class="token keyword">return</span> v<span class="token punctuation">;</span>
+
+    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">findWords</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">&amp;</span>words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        string qstr <span class="token operator">=</span> <span class="token string">"qwertyuiopQWERTYUIOP"</span><span class="token punctuation">;</span>
+        string astr <span class="token operator">=</span> <span class="token string">"asdfghjklASDFGHJKL"</span><span class="token punctuation">;</span>
+        string zstr <span class="token operator">=</span> <span class="token string">"zxcvbnmZXCVBNM"</span><span class="token punctuation">;</span>
+
+        vector<span class="token operator">&lt;</span>string<span class="token operator">></span> ans<span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> x<span class="token operator">:</span> words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>qstr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> qstr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>astr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> astr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>zstr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> zstr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">fizzBuzz</span><span class="token punctuation">(</span>n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>strs <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">&#123;</span>
-		str <span class="token operator">:=</span> <span class="token string">""</span>
-		<span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
-			str <span class="token operator">=</span> <span class="token string">"Fizz"</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">if</span> i<span class="token operator">%</span><span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">&#123;</span>
-			str <span class="token operator">+=</span> <span class="token string">"Buzz"</span>
-		<span class="token punctuation">&#125;</span>
-		<span class="token keyword">if</span> str <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">&#123;</span>
-            str<span class="token operator">=</span>strconv<span class="token punctuation">.</span><span class="token function">Itoa</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token comment">//优于Springf("%d",i)</span>
-		<span class="token punctuation">&#125;</span>
-		strs<span class="token operator">=</span><span class="token function">append</span><span class="token punctuation">(</span>strs<span class="token punctuation">,</span>str<span class="token punctuation">)</span>
-	<span class="token punctuation">&#125;</span>
-
-	<span class="token keyword">return</span> strs
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -568,7 +551,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://bai62.github.io/2021/10/13/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day1%E3%80%91Fizz-Buzz/">http://bai62.github.io/2021/10/13/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day1%E3%80%91Fizz-Buzz/</a>
+                    <a href="http://bai62.github.io/2021/10/31/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day16%E3%80%91%E9%94%AE%E7%9B%98%E8%A1%8C/">http://bai62.github.io/2021/10/31/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day16%E3%80%91%E9%94%AE%E7%9B%98%E8%A1%8C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,12 +589,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">每日算法</span>
+                                <a href="/tags/Leetcode/">
+                                    <span class="chip bg-color">Leetcode</span>
                                 </a>
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">每日算法</span>
                                 </a>
                             
                         </div>
@@ -781,17 +764,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/13/Golang%E6%95%B0%E7%BB%84%E5%92%8Cmap/">
+                <a href="/2021/10/31/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day16%E3%80%91%E9%94%AE%E7%9B%98%E8%A1%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Golang数组和map">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="【每日算法Day16】键盘行">
                         
-                        <span class="card-title">Golang数组和map</span>
+                        <span class="card-title">【每日算法Day16】键盘行</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,26 +785,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    计算机知识
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Golang/">
-                        <span class="chip bg-color">Golang</span>
+                    <a href="/tags/Leetcode/">
+                        <span class="chip bg-color">Leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">每日算法</span>
                     </a>
                     
                 </div>
@@ -834,13 +823,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/13/Golang%E8%A1%8C%E6%83%85%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%AF%BC%E5%8C%85%E4%B8%8E%E6%8C%87%E9%92%88/">
+                <a href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="https://i.loli.net/2021/10/06/edm3yxsPcnlIvrk.jpg" class="responsive-img" alt="Golang行情，变量，常量，导包与指针">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="【fi】计算机组成原理之总线与IO系统">
                         
-                        <span class="card-title">Golang行情，变量，常量，导包与指针</span>
+                        <span class="card-title">【fi】计算机组成原理之总线与IO系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -851,14 +840,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/" class="post-category">
-                                    计算机知识
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="post-category">
+                                    计算机组成原理
                                 </a>
                             
                             
@@ -868,8 +857,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Golang/">
-                        <span class="chip bg-color">Golang</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>

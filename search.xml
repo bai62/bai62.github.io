@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【每日算法Day16】键盘行</title>
+      <link href="/2021/10/31/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day16%E3%80%91%E9%94%AE%E7%9B%98%E8%A1%8C/"/>
+      <url>/2021/10/31/%E3%80%90%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95Day16%E3%80%91%E9%94%AE%E7%9B%98%E8%A1%8C/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Leetcode500-键盘行"><a href="#Leetcode500-键盘行" class="headerlink" title="Leetcode500. 键盘行"></a><a href="https://leetcode-cn.com/problems/keyboard-row/">Leetcode500. 键盘行</a></h4><p>给你一个字符串数组 words ，只返回可以使用在 美式键盘 同一行的字母打印出来的单词。键盘如下图所示。</p><p>美式键盘 中：</p><p>第一行由字符 “qwertyuiop” 组成。<br>第二行由字符 “asdfghjkl” 组成。<br>第三行由字符 “zxcvbnm” 组成。</p><p><img src="https://i.loli.net/2021/10/31/A5ImunMXL3vCVpw.png"></p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>示例 1：</p><p>输入：words = [“Hello”,”Alaska”,”Dad”,”Peace”]<br>输出：[“Alaska”,”Dad”]<br>示例 2：</p><p>输入：words = [“omk”]<br>输出：[]<br>示例 3：</p><p>输入：words = [“adsdf”,”sfd”]<br>输出：[“adsdf”,”sfd”]</p><p>提示：</p><p>1 &lt;= words.length &lt;= 20<br>1 &lt;= words[i].length &lt;= 100<br>words[i] 由英文字母（小写和大写字母）组成</p><h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>首先判断字符串的第一个字符，进行分类。由于每个分类都要遍历字符串来检查匹配情况，检查字符是否匹配的代码被封装成<code>checkStr() </code>函数，将需要比较的两个字符串传入，返回布尔值表示是否匹配</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">bool</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>string x<span class="token punctuation">,</span> string str<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> x<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">findWords</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">&amp;</span>words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        string qstr <span class="token operator">=</span> <span class="token string">"qwertyuiopQWERTYUIOP"</span><span class="token punctuation">;</span>        string astr <span class="token operator">=</span> <span class="token string">"asdfghjklASDFGHJKL"</span><span class="token punctuation">;</span>        string zstr <span class="token operator">=</span> <span class="token string">"zxcvbnmZXCVBNM"</span><span class="token punctuation">;</span>        vector<span class="token operator">&lt;</span>string<span class="token operator">></span> ans<span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> x<span class="token operator">:</span> words<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>qstr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> qstr<span class="token punctuation">)</span><span class="token punctuation">)</span>                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>astr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> astr<span class="token punctuation">)</span><span class="token punctuation">)</span>                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>zstr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token function">checkStr</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> zstr<span class="token punctuation">)</span><span class="token punctuation">)</span>                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">&#125;</span>         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> 每日算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【fi】计算机组成原理之总线与IO系统</title>
       <link href="/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F/"/>
       <url>/2021/10/30/%E3%80%90fi%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%80%BB%E7%BA%BF%E4%B8%8EIO%E7%B3%BB%E7%BB%9F/</url>
@@ -355,9 +382,9 @@
       
         <tags>
             
-            <tag> Leetcode </tag>
-            
             <tag> 每日一题 </tag>
+            
+            <tag> Leetcode </tag>
             
         </tags>
       
@@ -407,9 +434,9 @@
       
         <tags>
             
-            <tag> Leetcode </tag>
-            
             <tag> 每日一题 </tag>
+            
+            <tag> Leetcode </tag>
             
         </tags>
       
@@ -596,9 +623,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
             <tag> 动态规划 </tag>
             
@@ -702,9 +729,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
@@ -729,9 +756,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
@@ -756,9 +783,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
@@ -885,9 +912,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
@@ -987,9 +1014,9 @@
       
         <tags>
             
-            <tag> leetcode </tag>
-            
             <tag> 每日算法 </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
