@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>scp传输文件</title>
+      <link href="/2021/11/03/scp%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/"/>
+      <url>/2021/11/03/scp%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>Linux scp 命令用于 Linux 之间复制文件和目录</p><p>scp 是 <strong>secure copy</strong> 的缩写, scp 是 linux 系统下基于 ssh 登陆进行安全的远程文件拷贝命令</p><h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">scp [可选参数] file_source file_target <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="将本地文件传输给服务器"><a href="#将本地文件传输给服务器" class="headerlink" title="将本地文件传输给服务器"></a>将本地文件传输给服务器</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">scp ~&#x2F;.vimrc ~&#x2F;.tmux.conf s: ~&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="将服务器文件传输到本地"><a href="#将服务器文件传输到本地" class="headerlink" title="将服务器文件传输到本地"></a>将服务器文件传输到本地</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">scp s: ~&#x2F;.vimrc ~&#x2F;.tmux.conf ~&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果远程服务器防火墙有为scp命令设置了指定的端口，我们需要使用 -P 参数来设置命令的端口号，命令格式如下：</p><pre class="line-numbers language-none"><code class="language-none">scp -P 4588 s:~&#x2F;sin.sh ~&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shell </tag>
+            
+            <tag> ssh </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【saw】JS速成-面向过程</title>
       <link href="/2021/11/02/%E3%80%90saw%E3%80%91JS%E9%80%9F%E6%88%90-%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/"/>
       <url>/2021/11/02/%E3%80%90saw%E3%80%91JS%E9%80%9F%E6%88%90-%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</url>
