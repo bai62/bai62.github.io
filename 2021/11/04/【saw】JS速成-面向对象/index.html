@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="docker安装及使用, Sword的博客">
+    <meta name="keywords" content="【saw】JS速成-面向对象, Sword的博客">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>docker安装及使用 | Sword的博客</title>
+    <title>【saw】JS速成-面向对象 | Sword的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2021/10/06/oHcL42GRgsE5Cwh.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">docker安装及使用</h1>
+                    <h1 class="description center-align post-title">【saw】JS速成-面向对象</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                            <a href="/tags/docker/">
-                                <span class="chip bg-color">docker</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -484,117 +480,231 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><p><img src="https://i.loli.net/2021/11/04/9bdW7RUoV5jwYKh.png"></p>
-<h4 id="docker概述"><a href="#docker概述" class="headerlink" title="docker概述"></a>docker概述</h4><p><img src="https://i.loli.net/2021/11/02/uenyx4gEbmIsYTw.png"></p>
+                <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="JS常用对象"><a href="#JS常用对象" class="headerlink" title="JS常用对象"></a>JS常用对象</h2><h3 id="方法的定义和调用，apply"><a href="#方法的定义和调用，apply" class="headerlink" title="方法的定义和调用，apply"></a>方法的定义和调用，apply</h3><ul>
+<li>apply修改this指向</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>birth<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> <span class="token string">"san"</span><span class="token punctuation">,</span>
+    birth<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">getAge</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>birth<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token operator">></span>user<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token number">21</span>
+<span class="token operator">></span><span class="token function">getAge</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token number">21</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Data日期对象"><a href="#Data日期对象" class="headerlink" title="Data日期对象"></a>Data日期对象</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+now<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// 0~11</span>
+now<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         
+now<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//星期几</span>
+now<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+now<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+now<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+now<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+now<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//时间戳 全世界统一1635895461366</span>
+<span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1635895461366</span><span class="token punctuation">)</span>
+
+
+now<span class="token punctuation">.</span>toGMTString <span class="token comment">//因该是方法，而非属性</span>
+ƒ <span class="token function">toUTCString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token punctuation">[</span>native code<span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
+now<span class="token punctuation">.</span><span class="token function">toGMTString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Tue, 02 Nov 2021 23:26:01 GMT'</span>
+now<span class="token punctuation">.</span><span class="token function">toDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'Wed Nov 03 2021'</span>
+now<span class="token punctuation">.</span>toLocaleString
+ƒ <span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token punctuation">[</span>native code<span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
+now<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'11/3/2021, 7:26:01 AM'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//JSON.stringify()将js对象转化为json字符串</span>
+<span class="token keyword">var</span> jsonString <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+<span class="token comment">//JSON.parse()将json字符串解析为js对象</span>
+<span class="token keyword">var</span> jsObj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>jsonString<span class="token punctuation">)</span>
+
+<span class="token operator">></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jsObj<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span> <span class="token string">'san'</span><span class="token punctuation">,</span> birth<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">&#125;</span>
+<span class="token operator">></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jsonString<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span><span class="token string">"name"</span><span class="token operator">:</span><span class="token string">"san"</span><span class="token punctuation">,</span><span class="token string">"birth"</span><span class="token operator">:</span><span class="token number">2000</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="JS面向对象"><a href="#JS面向对象" class="headerlink" title="JS面向对象"></a>JS面向对象</h2><h3 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">student</span><span class="token punctuation">&#123;</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"hello, "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Xstudent</span> <span class="token keyword">extends</span> <span class="token class-name">student</span><span class="token punctuation">&#123;</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>grage</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>grage <span class="token operator">=</span> grade
+    <span class="token punctuation">&#125;</span>
+    
+    <span class="token function">showGrade</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">"your grade is "</span> <span class="token operator">+</span>  <span class="token keyword">this</span><span class="token punctuation">.</span>grage<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> st <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">student</span><span class="token punctuation">(</span><span class="token string">"san"</span><span class="token punctuation">)</span>
+st<span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> xst <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Xstudent</span><span class="token punctuation">(</span><span class="token string">"tan"</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">)</span>
+    xst<span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><ul>
+<li>可在浏览器中运行</li>
+</ul>
+<p>window代表浏览器窗口</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">window<span class="token punctuation">.</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+window<span class="token punctuation">.</span>outerHeight
+<span class="token number">864</span>
+window<span class="token punctuation">.</span>innerHeight
+<span class="token number">156</span>
+window<span class="token punctuation">.</span>innerHeight
+<span class="token number">367</span>
+window<span class="token punctuation">.</span>innerHeight
+<span class="token number">150</span>
+window<span class="token punctuation">.</span>innerHeight
+<span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>navigator封装了浏览器信息</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">navigator<span class="token punctuation">.</span>appName
+<span class="token string">'Netscape'</span>
+navigator<span class="token punctuation">.</span>appVersion
+<span class="token string">'5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'</span>
+navigator<span class="token punctuation">.</span>userAgent
+<span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'</span>
+navigator<span class="token punctuation">.</span>platform
+<span class="token string">'Win32'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>screen代表了屏幕的尺寸</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">screen<span class="token punctuation">.</span>width
+<span class="token number">1536</span>
+screen<span class="token punctuation">.</span>height
+<span class="token number">864</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>location代表当前页面的URL信息</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">host<span class="token operator">:</span><span class="token string">"www.baidu.com"</span>
+href<span class="token operator">:</span><span class="token string">"http://www.baidu.com"</span>
+protocol<span class="token operator">:</span><span class="token string">"https:"</span>
+reload<span class="token operator">:</span>f <span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//刷新页面</span>
+location<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token string">'https://bolg.kuangstudy.com/'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://i.loli.net/2021/11/03/pN23aRoigSls1Hq.png"></p>
+<p>document代表当前的页面</p>
 <ul>
-<li><p>容器 = 镜像 + 读写层</p>
-</li>
-<li><p>docker中很多命令要使用sudo权限，将<strong>当前用户</strong>加入安装中自动创建的docker用户组<code>sudo usermod -aG docker $USER</code></p>
-</li>
+<li><code>document.title = &quot;test&quot;</code>网页的title</li>
 </ul>
-<h3 id="镜像-image"><a href="#镜像-image" class="headerlink" title="镜像(image)"></a>镜像(image)</h3><img src="https://i.loli.net/2021/11/02/ORnlfrkZWvHxU7A.jpg" style="zoom:33%;" />
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>dl id <span class="token operator">=</span> <span class="token string">'app'</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>dt<span class="token operator">></span>title<span class="token operator">&lt;</span><span class="token operator">/</span>dt<span class="token operator">></span>
+    <span class="token operator">&lt;</span>dd<span class="token operator">></span>con1<span class="token operator">&lt;</span><span class="token operator">/</span>dd<span class="token operator">></span>
+    <span class="token operator">&lt;</span>dd<span class="token operator">></span>con2<span class="token operator">&lt;</span><span class="token operator">/</span>dd<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dl<span class="token operator">></span>
 
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://i.loli.net/2021/11/03/ZqMADu9bvm7C5Re.png"></p>
 <ul>
-<li><code>docker pull ubuntu:20.04</code> 从docker官网拉取镜像</li>
-<li><code>docker images</code>列出本地所有镜像</li>
-<li><code>docker image rm ubuntu:20.04</code>或<code>docker rmi &lt;image_name/id&gt;</code>删除镜像</li>
-<li><code>docker commit &lt;id/name&gt; &lt;image_name:tag&gt;</code><strong>创建</strong>指定container的<strong>镜像</strong></li>
-<li><code>docker save -o ubuntu_20_04.tar ubuntu:20.04</code>将名为ubuntu:20.04的<strong>镜像</strong>压缩(导出)为ubuntu_20_04.tar中<ul>
-<li><code>chmod +r ubuntu_20_04.tar</code>添加可读权限</li>
+<li><code>document.cookie</code>得到网站cookie信息<ul>
+<li>服务器端可以设置<code>cookie:httpOnly</code></li>
 </ul>
 </li>
-<li><code>scp ubuntu_20_4.tar ser:</code> 将镜像传到其他服务器</li>
-<li><code>docker load -i ubuntu_20_4.tar</code> 将<strong>镜像</strong>从压缩文件中加载出来</li>
 </ul>
-<h3 id="容器-container"><a href="#容器-container" class="headerlink" title="容器(container)"></a>容器(container)</h3><img src="https://i.loli.net/2021/11/02/3HnJfKvSA8yNpo5.jpg" style="zoom:30%;" />
+<p>history代表浏览器的历史记录</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">history<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//后退</span>
+history<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//前进</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ul>
-<li><code>docker create -p 20000:22 --name do -it ubuntu:20.04</code>利用ubuntu：20.04镜像创建一个容器<ul>
-<li>会自动生成id和名字</li>
-<li>将容器的22端口映射到本地的20000端口</li>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul>
+<li>浏览器网页就是一个DOM树形结构</li>
+<li>获得DOM结点后，对其进行更新，删除，添加</li>
+<li>操作结点是操作element对象，而不是操作id属性</li>
 </ul>
-</li>
-<li><code>docker ps -a</code>查看本地所有容器</li>
-<li><code>docker ps</code>查看已启动的容器</li>
-<li><code>docker start &lt;id/name&gt;</code>启动容器</li>
-<li><code>docker stop &lt;id/name&gt;</code>停止容器</li>
-<li><code>docker restart &lt;id/name&gt;</code>重启容器</li>
-<li><code>docker run --name do  -itd ubuntu:20.04</code>创建并启动一个容器</li>
-<li><code>docker run -it ubuntu:20.04</code>创建并启动并进入容器</li>
-<li><code>docker attach &lt;id/name&gt;</code>进入容器<ul>
-<li><code>ctrl-p</code>+<code>ctrl-q</code>可以挂起容器</li>
-<li><code>ctrl-d</code>或键入<code>exit</code>会直接退出容器</li>
-<li>只能进入已启动的容器</li>
-</ul>
-</li>
-<li><code>docker exec &lt;id/name&gt; &lt;command&gt;</code>不进入容器下，在已启动的容器中执行命令</li>
-</ul>
-<p><img src="https://i.loli.net/2021/11/04/GMXSYcUlAfQr1em.png"></p>
-<ul>
-<li><code>docker rm &lt;id/name&gt;</code>删除容器<ul>
-<li><code>docker rmi &lt;name&gt;</code>删除镜像</li>
-</ul>
-</li>
-<li><code>docker container prune</code>删除所有已停止的容器</li>
-<li><code>docker export -o xxx.tar &lt;id/container&gt;</code>将容器导入到本地文件<ul>
-<li><code>chamod</code></li>
-</ul>
-</li>
-<li><code>docker import xxx.tar &lt;image_name:tag&gt;</code></li>
-<li>export/import会丢弃<strong>历史记录</strong>和<strong>元数据信息</strong>，仅保存容器当时的快照状态</li>
-<li>save/load会保存完整记录，体积更大</li>
-<li><code>docker top &lt;name/id&gt;</code>查看某个<strong>容器内</strong>的所有进程</li>
-</ul>
-<p><img src="https://i.loli.net/2021/11/04/2DGHE5LWAmT6QfY.png"></p>
-<ul>
-<li><code>docker stats</code>查看所有容器的<strong>统计信息</strong></li>
-</ul>
-<p><img src="https://i.loli.net/2021/11/04/VPgImtzuRicwWdC.png"></p>
-<ul>
-<li><code>docker cp xxx &lt;name/id&gt;:xxx</code>或<code>docker cp &lt;name/id&gt;:xxx xxx</code>在本地和容器复制文件<ul>
-<li>不需要加<code>-r</code></li>
-</ul>
-</li>
-<li><code>docker rename &lt;name/id&gt; &lt;new_name&gt;</code>重命名容器</li>
-<li><code>docker update &lt;name/id&gt; --memory 500MMB</code>修改容器限制</li>
-</ul>
-<h3 id="docker的其他操作"><a href="#docker的其他操作" class="headerlink" title="docker的其他操作"></a>docker的其他操作</h3><ul>
-<li><code> ssh root@127.0.0.1 -p 20000</code>本地通过<a href="mailto:&#114;&#111;&#x6f;&#116;&#64;&#x31;&#50;&#55;&#x2e;&#48;&#x2e;&#48;&#46;&#49;">&#114;&#111;&#x6f;&#116;&#64;&#x31;&#50;&#55;&#x2e;&#48;&#x2e;&#48;&#46;&#49;</a>或root@localhost进行ssh连接<ul>
-<li>需要在阿里云服务器安全组中打开20000端口</li>
-</ul>
-</li>
-<li><code>scp -p 20000 .vimrc .tmux.conf .bashrc s:</code>传文件</li>
-<li>在设备的<code>~/.ssh/config</code>文件下，添加如下配置后<code>ssh-copy-id ac</code>可免密登录docker</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Host ac
-	HostName 127.165.28.12
-	User py
-	Port 20000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获得DOM结点"><a href="#获得DOM结点" class="headerlink" title="获得DOM结点"></a>获得DOM结点</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script src <span class="token operator">=</span> test<span class="token punctuation">.</span>js<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
-<h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><p>ubuntu 20.04</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt-get update
-sudo apt-get install \
-   ca-certificates \
-   curl \
-   gnupg \
-   lsb-release
-   
-curl -fsSL https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu&#x2F;gpg | sudo gpg --dearmor -o &#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg
+<span class="token operator">&lt;</span>div id <span class="token operator">=</span> <span class="token string">"father"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>h1<span class="token operator">></span>head<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+    <span class="token operator">&lt;</span>p id<span class="token operator">=</span><span class="token string">"x"</span><span class="token operator">></span>con1<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+    <span class="token operator">&lt;</span>p <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"y"</span><span class="token operator">></span>con2<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
 
-echo \
- &quot;deb [arch&#x3D;$(dpkg --print-architecture) signed-by&#x3D;&#x2F;usr&#x2F;share&#x2F;keyrings&#x2F;docker-archive-keyring.gpg] https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;ubuntu \
- $(lsb_release -cs) stable&quot; | sudo tee &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F;docker.list &gt; &#x2F;dev&#x2F;null
- 
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">let</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"h1"</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> x <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"X"</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> y <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">"y"</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> father <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"father"</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> children <span class="token operator">=</span> father<span class="token punctuation">.</span>children
+    <span class="token comment">//children.firstChild</span>
+    <span class="token comment">//father.firstChild</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>检查docker安装</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&gt; docker --version
-&lt;Docker version 20.10.10, build b485636<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="更新DOM结点"><a href="#更新DOM结点" class="headerlink" title="更新DOM结点"></a>更新DOM结点</h3><ul>
+<li>innerText，innerHTML，style可以修改<code>getElementsById()</code>得到的结点</li>
+<li>更新结点皆为属性赋值，而非调用函数</li>
+<li><code>&lt;id&gt;.innnerText=&#39;xxx&#39;</code>修改文本的值</li>
+<li><code>&lt;id&gt;.innerHTML=&#39;&lt;strong&gt;123&lt;/strong&gt;&#39;</code>修改并解析html代码</li>
+<li><code>&lt;id&gt;.style.color/fontsize/padding = 新属性</code>修改文本的style</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">'red'</span>
+<span class="token string">'red'</span>
+x<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;strong>con1&lt;/strong>'</span>
+<span class="token string">'&lt;strong>con1&lt;/strong>'</span>
+x<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token string">'50px'</span>
+<span class="token string">'50px'</span>
+x<span class="token punctuation">.</span>style<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token string">'1em'</span>
+<span class="token string">'1em'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="安装其他常见功能"><a href="#安装其他常见功能" class="headerlink" title="安装其他常见功能"></a>安装其他常见功能</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt-get install tree
-sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/11/03/h9zsSJdDcWqCOg3.png"></p>
+<h3 id="删除DOM结点"><a href="#删除DOM结点" class="headerlink" title="删除DOM结点"></a>删除DOM结点</h3><ul>
+<li>找到父节点删除子结点</li>
+<li>子节点删除后father.children数组动态变化</li>
+<li><code>son.parentElement</code>属性找到父节点</li>
+<li><code>fat.removeChild(son)</code>或<code>fat.removeChild(fat.children[3])</code>删除子节点</li>
+</ul>
+<p><img src="https://i.loli.net/2021/11/03/iWO5em4wQJGIgoX.png"></p>
+<h3 id="移动结点"><a href="#移动结点" class="headerlink" title="移动结点"></a>移动结点</h3><ul>
+<li>fat.appendChild(&lt;id&gt;)以剪切的方式在fat内追加新的子节点</li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> test.js</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>xxxxx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>dr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>head<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>con1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>x<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>con2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> js <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"js"</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> dr <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"dr"</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//js被移动到dr内最后一位</span>
+dr<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>js<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="创建结点后追加"><a href="#创建结点后追加" class="headerlink" title="创建结点后追加"></a>创建结点后追加</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> nson <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span> <span class="token comment">//createElement()参数为标签类型</span>
+<span class="token comment">//nson.id = 'nson '</span>
+nson<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;strong>xxx&lt;/strong>'</span>
+dr<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="创建script类型的结点元素"><a href="#创建script类型的结点元素" class="headerlink" title="创建script类型的结点元素"></a>创建script类型的结点元素</h3><p><img src="https://i.loli.net/2021/11/03/PJFibvgnr89zdC3.png"></p>
+<h3 id="插入结点"><a href="#插入结点" class="headerlink" title="插入结点"></a>插入结点</h3><p><img src="https://i.loli.net/2021/11/03/qOWkNxf51z2jcDl.png"></p>
+<h2 id="操作表单"><a href="#操作表单" class="headerlink" title="操作表单"></a>操作表单</h2><p><img src="https://i.loli.net/2021/11/04/yuKd1X2U3xO9ARw.png"></p>
+<p><img src="https://i.loli.net/2021/11/04/NIZtG2XVebMrF46.png"></p>
+<p><img src="https://i.loli.net/2021/11/04/mQBrpShA71FTxWe.png"></p>
 
                 
             </div>
@@ -621,7 +731,7 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://bai62.github.io/2021/11/04/docker%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/">http://bai62.github.io/2021/11/04/docker%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</a>
+                    <a href="http://bai62.github.io/2021/11/04/%E3%80%90saw%E3%80%91JS%E9%80%9F%E6%88%90-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">http://bai62.github.io/2021/11/04/%E3%80%90saw%E3%80%91JS%E9%80%9F%E6%88%90-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -659,12 +769,8 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
-                                </a>
-                            
-                                <a href="/tags/docker/">
-                                    <span class="chip bg-color">docker</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -834,9 +940,10 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/11/04/%E3%80%90saw%E3%80%91JS%E9%80%9F%E6%88%90-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                     <div class="card-image">
@@ -854,9 +961,9 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -869,6 +976,7 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -887,13 +995,13 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/03/scp%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6/">
+                <a href="/2021/11/04/docker%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="scp传输文件">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="docker安装及使用">
                         
-                        <span class="card-title">scp传输文件</span>
+                        <span class="card-title">docker安装及使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,7 +1012,7 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
                             </span>
                         <span class="publish-author">
                             
@@ -921,16 +1029,12 @@ sudo apt install ipython3 #通过ipython启动<span aria-hidden="true" class="li
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/shell/">
-                        <span class="chip bg-color">shell</span>
-                    </a>
-                    
-                    <a href="/tags/ssh/">
-                        <span class="chip bg-color">ssh</span>
-                    </a>
-                    
                     <a href="/tags/linux/">
                         <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
