@@ -435,10 +435,6 @@
                                 <span class="chip bg-color">PyTorch</span>
                             </a>
                         
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">深度学习</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -605,8 +601,8 @@ tensor<span class="token punctuation">(</span><span class="token punctuation">[<
 </ul>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">torch<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token comment">#0~1随机数</span>
 torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>size<span class="token punctuation">)</span> <span class="token comment">#均值0，方差1的正态分布tensor</span>
-torch<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>size<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> std<span class="token punctuation">)</span>
-torch<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token punctuation">,</span> high<span class="token punctuation">,</span> size）
+torch<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>size<span class="token punctuation">,</span> mean<span class="token punctuation">,</span> std<span class="token punctuation">)</span> 
+torch<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>low<span class="token punctuation">,</span> high<span class="token punctuation">,</span> size<span class="token punctuation">)</span> <span class="token comment">#[0:high)第一个参数默认为0</span>
               
 <span class="token operator">>></span><span class="token operator">></span> torch<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>mean<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>std<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
 tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">3.9179</span><span class="token punctuation">,</span> <span class="token number">2.7630</span><span class="token punctuation">,</span> <span class="token number">4.2816</span><span class="token punctuation">,</span> <span class="token number">2.3938</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -792,10 +788,6 @@ tensor<span class="token punctuation">(</span><span class="token punctuation">[<
                             
                                 <a href="/tags/PyTorch/">
                                     <span class="chip bg-color">PyTorch</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">深度学习</span>
                                 </a>
                             
                         </div>
