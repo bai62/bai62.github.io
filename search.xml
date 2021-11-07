@@ -41,8 +41,6 @@
             
             <tag> 微信小程序 </tag>
             
-            <tag> 前端 </tag>
-            
         </tags>
       
     </entry>
@@ -141,10 +139,6 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
-            <tag> ssh </tag>
-            
             <tag> linux </tag>
             
         </tags>
@@ -219,8 +213,6 @@
       
       
         <tags>
-            
-            <tag> ssh </tag>
             
             <tag> linux </tag>
             
@@ -1838,9 +1830,7 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
-            <tag> ssh </tag>
+            <tag> linux </tag>
             
         </tags>
       
@@ -1893,8 +1883,6 @@
         <tags>
             
             <tag> 动态规划 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
@@ -1994,7 +1982,7 @@
       
         <tags>
             
-            <tag> 软件 </tag>
+            <tag> 工具 </tag>
             
         </tags>
       
